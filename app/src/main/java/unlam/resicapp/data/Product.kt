@@ -1,6 +1,8 @@
 package unlam.resicapp.data
 
 data class Product(
+    // ToDo:: -4- *Agregar referencia a imagen* / Priority: Media
+    // Description:
     val id: Long,
     val name: String,
     val type: ProductType,

@@ -9,11 +9,16 @@ import unlam.resicapp.util.Date
 import java.time.LocalDateTime
 
 class PurchaseManager {
+    // ToDo:: -7- *Traer compras por id del usuario* / Priority: Media
+    // Description:
 
     fun getAllPurchases(): List<Purchase> {
         return PurchaseRepository.getAllPurchases()
     }
 
+    // ToDo:: -8- *Revisar lógica* / Priority: Alta
+    // Description: Actualizar cuando se cambie el enum del ProductClassification
+    //              Agregar la venta a PurchaseRepository
     fun sellProduct(userId: Long, product: Product, date: LocalDateTime): Purchase {
         return Purchase(
             id = PurchaseRepository.getAllPurchases().last().id + 1,

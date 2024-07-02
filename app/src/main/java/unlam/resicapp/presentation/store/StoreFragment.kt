@@ -20,6 +20,9 @@ class StoreFragment : Fragment() {
     ): View {
         _binding = FragmentStoreBinding.inflate(inflater, container, false)
 
+        // ToDo:: -10- *No permitir volver atrás* / Priority: Media
+        // Description: Lanzar snackbar preguntando si quiere cerrar la sesión
+
         binding.buttonToPurchase.setOnClickListener {
             val action =  R.id.action_storeFragment_to_purchaseFragment
             findNavController().navigate(action)

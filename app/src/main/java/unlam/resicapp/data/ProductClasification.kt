@@ -3,6 +3,8 @@ package unlam.resicapp.data
 import unlam.resicapp.util.Date
 
 enum class ProductClasification {
+    // ToDo:: -5- *Crear clases individuales para cada item* / Priority: Media
+    // Description:
     GOLD {
         override fun calculateFee(product: Product, date: Date): Double {
             return product.price.times(0.02)

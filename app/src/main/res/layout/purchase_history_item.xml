@@ -60,4 +60,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/itemImage"
         tools:text="20-05-2024" />
+
+    <!-- // ToDo:: *Agregar divider* / Priority: Media -->
 </androidx.constraintlayout.widget.ConstraintLayout>
