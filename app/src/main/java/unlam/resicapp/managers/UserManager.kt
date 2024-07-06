@@ -9,7 +9,7 @@ class UserManager {
     // Description:
     fun isUserValid(nickNameToFind: String, passwordToFind: String) : User? {
         return UserRepository.getUsers().find {
-            it.nickName.lowercase() == nickNameToFind && it.password == passwordToFind
+            it.nickName.lowercase() == nickNameToFind.lowercase() && it.password == passwordToFind
         }
     }
 

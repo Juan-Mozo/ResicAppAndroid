@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.resicappandroid.R
 import unlam.resicapp.data.Purchase
+import unlam.resicapp.managers.ProductManager
+import unlam.resicapp.presentation.util.ImageTransformation
 
 class PurchaseHistoryViewHolder(
     view: View
@@ -21,9 +23,9 @@ class PurchaseHistoryViewHolder(
     private val dateText = view.findViewById<TextView>(R.id.itemDate)
 
     fun bind(item: Purchase) {
-        // ToDo:: -4- *Agregar imagenes* / Priority: Medio
-        // Description: Usar libreria picasso y agregar links
-        productNameText.text = item.productName
+        val product = ProductManager().getProductById(item.productId)!!
+        ImageTransformation(product.logo).loadItemSizeImage(productImage)
+        productNameText.text = product.name
         purchaseAmountText.text = item.amount.toString()
         dateText.text = item.createdDate
     }

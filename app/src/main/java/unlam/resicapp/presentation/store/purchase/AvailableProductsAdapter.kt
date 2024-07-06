@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.resicappandroid.R
 import unlam.resicapp.data.Product
+import unlam.resicapp.presentation.util.ImageTransformation
 
 class AvailableProductsViewHolder(
     view: View
@@ -20,8 +21,7 @@ class AvailableProductsViewHolder(
     private val amountTitleText = view.findViewById<TextView>(R.id.amountTitle)
 
     fun bind(item: Product) {
-        // ToDo:: -4- *Agregar imagenes* / Priority: Medio
-        // Description: Usar libreria picasso y agregar links
+        ImageTransformation(item.logo).loadItemSizeImage(productImage)
         amountTitleText.visibility = View.INVISIBLE
         productNameText.text = item.name
     }
