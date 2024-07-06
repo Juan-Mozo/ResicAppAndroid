@@ -35,8 +35,7 @@ class LoginFragment : Fragment() {
             if (userManager.isUserValid(user, password) != null) {
                 // ToDo:: -3- *Pasar usuario por navegación* / Priority: Alta
                 // Description:
-                val action =  R.id.action_loginFragment_to_storeFragment
-                findNavController().navigate(action)
+                navigateToStore(user)
             } else {
                 Snackbar.make(requireView(), R.string.message_incorrect_login, Snackbar.LENGTH_SHORT).show()
             }
@@ -44,6 +43,11 @@ class LoginFragment : Fragment() {
 
         return binding.root
 
+    }
+
+    private fun navigateToStore(user: String) {
+        val action =  LoginFragmentDirections.actionLoginFragmentToStoreFragment(user)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {
