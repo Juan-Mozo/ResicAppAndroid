@@ -1,4 +1,4 @@
-package unlam.resicapp.presentation.store
+package unlam.resicapp.presentation.store.purchase_history
 
 import android.view.LayoutInflater
 import android.view.View

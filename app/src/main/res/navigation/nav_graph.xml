@@ -21,17 +21,27 @@
             android:id="@+id/action_storeFragment_to_purchaseHistoryFragment"
             app:destination="@id/purchaseHistoryFragment" />
         <action
-            android:id="@+id/action_storeFragment_to_purchaseFragment"
-            app:destination="@id/purchaseFragment" />
+            android:id="@+id/action_storeFragment_to_availableProductsFragment"
+            app:destination="@id/availableProductsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/purchaseHistoryFragment"
-        android:name="unlam.resicapp.presentation.store.PurchaseHistoryFragment"
+        android:name="unlam.resicapp.presentation.store.purchase_history.PurchaseHistoryFragment"
         android:label="fragment_purchase_history_list"
         tools:layout="@layout/fragment_purchase_history" />
     <fragment
         android:id="@+id/purchaseFragment"
-        android:name="unlam.resicapp.presentation.store.PurchaseFragment"
+        android:name="unlam.resicapp.presentation.store.purchase.PurchaseFragment"
         android:label="fragment_purchase"
         tools:layout="@layout/fragment_purchase" />
+    <fragment
+        android:id="@+id/availableProductsFragment"
+        android:name="unlam.resicapp.presentation.store.purchase.AvailableProductsFragment"
+        android:label="fragment_available_products"
+        tools:layout="@layout/fragment_available_products" >
+        <action
+            android:id="@+id/action_availableProductsFragment_to_purchaseFragment"
+            app:destination="@id/purchaseFragment" />
+    </fragment>
 </navigation>

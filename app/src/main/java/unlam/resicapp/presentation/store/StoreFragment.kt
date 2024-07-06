@@ -24,7 +24,7 @@ class StoreFragment : Fragment() {
         // Description: Lanzar snackbar preguntando si quiere cerrar la sesión
 
         binding.buttonToPurchase.setOnClickListener {
-            val action =  R.id.action_storeFragment_to_purchaseFragment
+            val action =  R.id.action_storeFragment_to_availableProductsFragment
             findNavController().navigate(action)
         }
 

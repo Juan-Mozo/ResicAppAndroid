@@ -1,4 +1,4 @@
-package unlam.resicapp.presentation.store
+package unlam.resicapp.presentation.store.purchase
 
 import android.os.Bundle
 import android.view.LayoutInflater
