@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_loginFragment_to_storeFragment"
             app:destination="@id/storeFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/storeFragment"
@@ -23,6 +26,9 @@
         <action
             android:id="@+id/action_storeFragment_to_availableProductsFragment"
             app:destination="@id/availableProductsFragment" />
+        <argument
+            android:name="user"
+            app:argType="string" />
 
     </fragment>
     <fragment
