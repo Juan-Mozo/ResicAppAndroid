@@ -33,8 +33,6 @@ class LoginFragment : Fragment() {
             }
 
             if (userManager.isUserValid(user, password) != null) {
-                // ToDo:: -3- *Pasar usuario por navegación* / Priority: Alta
-                // Description:
                 navigateToStore(user)
             } else {
                 Snackbar.make(requireView(), R.string.message_incorrect_login, Snackbar.LENGTH_SHORT).show()

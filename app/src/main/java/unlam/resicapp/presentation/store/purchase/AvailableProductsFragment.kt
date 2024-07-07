@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentAvailableProductsBinding
+import unlam.resicapp.data.Product
 import unlam.resicapp.managers.ProductManager
 
 class AvailableProductsFragment : Fragment() {
@@ -28,8 +29,7 @@ class AvailableProductsFragment : Fragment() {
         val recyclerView = binding.availableProductsRV
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val recyclerViewAdapter = AvailableProductsAdapter { product ->
-            val action =  R.id.action_availableProductsFragment_to_purchaseFragment
-            findNavController().navigate(action)
+            navigateToPurchaseFragment(product)
         }
         recyclerView.adapter = recyclerViewAdapter
 
@@ -38,6 +38,14 @@ class AvailableProductsFragment : Fragment() {
 
         return binding.root
 
+    }
+
+    private fun navigateToPurchaseFragment(product: Product) {
+        val action =
+            AvailableProductsFragmentDirections.actionAvailableProductsFragmentToPurchaseFragment(
+                product
+            )
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

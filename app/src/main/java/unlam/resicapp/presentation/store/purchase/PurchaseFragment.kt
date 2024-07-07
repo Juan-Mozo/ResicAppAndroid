@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.resicappandroid.databinding.FragmentPurchaseBinding
+import unlam.resicapp.data.Product
 
 class PurchaseFragment : Fragment() {
 
     private var _binding: FragmentPurchaseBinding? = null
     private val binding get() = _binding!!
+    private val args: PurchaseFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +31,7 @@ class PurchaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val product = args.product
     }
 
     override fun onDestroyView() {
