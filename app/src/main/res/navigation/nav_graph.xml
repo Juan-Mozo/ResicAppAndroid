@@ -37,10 +37,14 @@
         android:label="fragment_purchase_history_list"
         tools:layout="@layout/fragment_purchase_history" />
     <fragment
-        android:id="@+id/purchaseFragment"
-        android:name="unlam.resicapp.presentation.store.purchase.PurchaseFragment"
+        android:id="@+id/productDetailFragment"
+        android:name="unlam.resicapp.presentation.store.purchase.ProductDetailFragment"
         android:label="fragment_purchase"
-        tools:layout="@layout/fragment_purchase" />
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="product"
+            app:argType="unlam.resicapp.data.Product" />
+    </fragment>
     <fragment
         android:id="@+id/availableProductsFragment"
         android:name="unlam.resicapp.presentation.store.purchase.AvailableProductsFragment"
@@ -48,6 +52,9 @@
         tools:layout="@layout/fragment_available_products" >
         <action
             android:id="@+id/action_availableProductsFragment_to_purchaseFragment"
-            app:destination="@id/purchaseFragment" />
+            app:destination="@id/productDetailFragment" />
+        <argument
+            android:name="product"
+            app:argType="unlam.resicapp.data.Product" />
     </fragment>
 </navigation>

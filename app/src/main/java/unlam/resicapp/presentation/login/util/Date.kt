@@ -1,4 +1,4 @@
-package unlam.resicapp.util
+package unlam.resicapp.presentation.login.util
 
 import java.time.DayOfWeek
 import java.time.LocalDateTime

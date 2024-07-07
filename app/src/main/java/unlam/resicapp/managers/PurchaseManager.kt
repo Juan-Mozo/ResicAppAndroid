@@ -5,7 +5,7 @@ import unlam.resicapp.data.Purchase
 import unlam.resicapp.data.User
 import unlam.resicapp.repositories.ProductRepository
 import unlam.resicapp.repositories.PurchaseRepository
-import unlam.resicapp.util.Date
+import unlam.resicapp.presentation.login.util.Date
 import java.time.LocalDateTime
 
 class PurchaseManager {

@@ -21,9 +21,6 @@ class StoreFragment : Fragment() {
     ): View {
         _binding = FragmentStoreBinding.inflate(inflater, container, false)
         val user = arguments?.getString("user")
-        // ToDo:: -15- *Eliminar Toast* / Priority: Baja
-        // Description: El mensaje era solo para comprobar la funcionalidad, se puede eliminar
-        Toast.makeText(activity, user, Toast.LENGTH_LONG).show()
 
         // ToDo:: -10- *No permitir volver atrás* / Priority: Media
         // Description: Lanzar snackbar preguntando si quiere cerrar la sesión

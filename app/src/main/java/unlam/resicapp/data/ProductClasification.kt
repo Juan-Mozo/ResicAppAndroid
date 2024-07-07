@@ -1,6 +1,6 @@
 package unlam.resicapp.data
 
-import unlam.resicapp.util.Date
+import unlam.resicapp.presentation.login.util.Date
 
 enum class ProductClasification {
     // ToDo:: -5- *Crear clases individuales para cada item* / Priority: Media
