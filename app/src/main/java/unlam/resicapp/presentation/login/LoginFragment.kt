@@ -25,15 +25,17 @@ class LoginFragment : Fragment() {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.loginButton.setOnClickListener {
-            val user = binding.userEditText.text.toString()
+            val userName = binding.userEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
 
-            if (user.isEmpty() || password.isEmpty()) {
+            if (userName.isEmpty() || password.isEmpty()) {
                 Snackbar.make(requireView(), R.string.message_empty_text, Snackbar.LENGTH_SHORT).show()
             }
 
-            if (userManager.isUserValid(user, password) != null) {
-                navigateToStore(user)
+            val user = userManager.isUserValid(userName, password)
+            if (user != null) {
+                userManager.setUserLogged(user)
+                navigateToStore()
             } else {
                 Snackbar.make(requireView(), R.string.message_incorrect_login, Snackbar.LENGTH_SHORT).show()
             }
@@ -43,8 +45,8 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun navigateToStore(user: String) {
-        val action =  LoginFragmentDirections.actionLoginFragmentToStoreFragment(user)
+    private fun navigateToStore() {
+        val action =  LoginFragmentDirections.actionLoginFragmentToStoreFragment()
         findNavController().navigate(action)
     }
 

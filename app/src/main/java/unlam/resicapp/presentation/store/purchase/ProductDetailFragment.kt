@@ -5,10 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentProductDetailBinding
+import com.google.android.material.snackbar.Snackbar
 import unlam.resicapp.data.Product
+import unlam.resicapp.managers.PurchaseManager
+import unlam.resicapp.managers.UserManager
 import unlam.resicapp.presentation.util.ImageTransformation
+import java.time.LocalDateTime
 
 class ProductDetailFragment : Fragment() {
     // ToDo:: -6- *ProductDetailFragment* / Priority: Alta
@@ -16,6 +22,8 @@ class ProductDetailFragment : Fragment() {
     private var _binding: FragmentProductDetailBinding? = null
     private val binding get() = _binding!!
     private val args: ProductDetailFragmentArgs by navArgs()
+    private val userManager = UserManager()
+    private val purchaseManager = PurchaseManager()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +39,14 @@ class ProductDetailFragment : Fragment() {
         setupViews(product)
 
         binding.buyButton.setOnClickListener{
-
+            val user = userManager.getUserLogged()
+            purchaseManager.newPurchase(user.id, product, LocalDateTime.now())
+            Snackbar.make(requireView(), R.string.message_succesfully_purchase, Snackbar.LENGTH_SHORT).show()
+            findNavController().popBackStack() //retorna al usuario al fragment anterior
         }
 
     }
+
     private fun setupViews(product: Product) {
     // imagen del producto
         val productImgUrl = product.logo

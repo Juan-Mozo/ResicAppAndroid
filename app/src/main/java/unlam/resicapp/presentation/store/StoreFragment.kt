@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.resicappandroid.R
@@ -20,8 +19,6 @@ class StoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentStoreBinding.inflate(inflater, container, false)
-        val user = arguments?.getString("user")
-
         // ToDo:: -10- *No permitir volver atrás* / Priority: Media
         // Description: Lanzar snackbar preguntando si quiere cerrar la sesión
 

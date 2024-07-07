@@ -5,6 +5,7 @@ import unlam.resicapp.data.User
 object UserRepository {
 
     private val users = mutableListOf<User>()
+    private var userLogged : User? = null
 
     init {
         users.add(User(1504L, "bbayarri", "abc123", "Brian", "Bayarri", 3500000.50, "2022/12/10"))
@@ -13,6 +14,13 @@ object UserRepository {
         users.add(User(1515L, "Leo", "Leo123", "Leonardo", "Toloza", 190000.0, "2024/02/14"))
     }
 
-    fun getUsers(): List<User> = users
+    fun getUsersList(): List<User> = users
 
+    fun setUserLogged(user: User){
+        userLogged = user
+    }
+
+    fun getUserLogged(): User {
+        return userLogged!!
+    }
 }
