@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.resicappandroid.databinding.FragmentAvailableProductsBinding
 import unlam.resicapp.data.Product
 import unlam.resicapp.managers.ProductManager
+import unlam.resicapp.managers.UserManager
+import unlam.resicapp.presentation.util.HeaderAdapter
 
 class AvailableProductsFragment : Fragment() {
 
@@ -17,6 +20,7 @@ class AvailableProductsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val productManager = ProductManager()
+    private val userManager = UserManager()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,13 +34,19 @@ class AvailableProductsFragment : Fragment() {
         val recyclerViewAdapter = AvailableProductsAdapter { product ->
             navigateToProductDetailFragment(product)
         }
-        recyclerView.adapter = recyclerViewAdapter
+        val headerAdapter = HeaderAdapter("Productos disponibles")
+        recyclerView.adapter = ConcatAdapter(headerAdapter, recyclerViewAdapter)
 
         // Load list
         recyclerViewAdapter.submitList(productManager.getListOfAvailableProducts())
 
         return binding.root
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.userMoneyText.text = userManager.getUserLogged().money.toString()
     }
 
     private fun navigateToProductDetailFragment(product: Product) {

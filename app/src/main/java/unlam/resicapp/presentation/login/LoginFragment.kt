@@ -10,6 +10,7 @@ import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentLoginBinding
 import com.google.android.material.snackbar.Snackbar
 import unlam.resicapp.managers.UserManager
+import unlam.resicapp.managers.exceptions.UserNotFoundException
 
 class LoginFragment : Fragment() {
 
@@ -38,6 +39,7 @@ class LoginFragment : Fragment() {
                 navigateToStore()
             } else {
                 Snackbar.make(requireView(), R.string.message_incorrect_login, Snackbar.LENGTH_SHORT).show()
+                throw UserNotFoundException("User not found")
             }
         }
 
@@ -46,7 +48,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToStore() {
-        val action =  LoginFragmentDirections.actionLoginFragmentToStoreFragment()
+        val action =  R.id.action_loginFragment_to_storeFragment
         findNavController().navigate(action)
     }
 

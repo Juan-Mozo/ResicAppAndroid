@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/availableProductsFragment"
+        android:icon="@drawable/baseline_add_shopping_cart_24"
+        android:title="Comprar" />
+
+    <item
+        android:id="@+id/purchaseHistoryFragment"
+        android:icon="@drawable/baseline_history_24"
+        android:title="Historial" />
+
+</menu>
