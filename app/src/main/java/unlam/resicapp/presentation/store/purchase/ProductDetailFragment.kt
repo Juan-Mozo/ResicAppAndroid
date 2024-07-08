@@ -5,27 +5,92 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentProductDetailBinding
+import com.google.android.material.snackbar.Snackbar
+import unlam.resicapp.data.Product
+import unlam.resicapp.managers.PurchaseManager
+import unlam.resicapp.managers.UserManager
+import unlam.resicapp.presentation.util.ImageTransformation
+import java.time.LocalDateTime
 
 class ProductDetailFragment : Fragment() {
-
+    // ToDo:: -6- *ProductDetailFragment* / Priority: Alta
+    // Description: Mostrar producto seleccionado y permitir confirmar compra
     private var _binding: FragmentProductDetailBinding? = null
     private val binding get() = _binding!!
     private val args: ProductDetailFragmentArgs by navArgs()
+    private val userManager = UserManager()
+    private val purchaseManager = PurchaseManager()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
-
         _binding = FragmentProductDetailBinding.inflate(inflater, container, false)
-
-        // ToDo:: -6- *ProductDetailFragment* / Priority: Alta
-        // Description: Mostrar rv con los productos disponibles y permitir confirmar compra en otro fragment
-        val product = args.product
         return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val product = args.product
+        setupViews(product)
+
+        binding.buyButton.setOnClickListener{
+            val user = userManager.getUserLogged()
+            purchaseManager.newPurchase(user.id, product, LocalDateTime.now())
+            Snackbar.make(requireView(), R.string.message_succesfully_purchase, Snackbar.LENGTH_SHORT).show()
+            findNavController().popBackStack() //retorna al usuario al fragment anterior
+        }
+
+    }
+
+    private fun setupViews(product: Product) {
+    // imagen del producto
+        val productImgUrl = product.logo
+        val image = ImageTransformation(productImgUrl)
+        image.loadItemSizeImage(binding.productLogo)
+
+    // Nombre del producto
+        val productNameTextView = binding.productName
+        productNameTextView.text = product.name
+
+    // Autor
+        val productAuthorTextView = binding.productAuthor
+        val productAuthor = "Autor: ${product.author}"
+        productAuthorTextView.text = productAuthor
+
+    // Tipo de producto
+        val productTypeTextView = binding.productType
+        val productType = "Tipo: ${product.type}"
+        productTypeTextView.text = productType
+
+    // Clasificación del producto
+        val productClassificationTextView = binding.productClassification
+        val productClassification = "Clasificación: ${product.classification}"
+        productClassificationTextView.text = productClassification
+
+    // Fecha de lanzamiento
+        val productReleasedDateTextView = binding.productReleasedDate
+        val productReleasedDate = "Fecha de lanzamiento: ${product.releasedDate}"
+        productReleasedDateTextView.text = productReleasedDate
+
+    // Categoría
+        val productCategoryTextView = binding.productCategory
+        val productCategory = "Categoría: ${product.category}"
+        productCategoryTextView.text = productCategory
+
+    // Estrellas
+        val productStarsTextView = binding.productStars
+        val productStars = "Estrellas: ${product.stars}"
+        productStarsTextView.text = productStars
+
+    // Precio
+        val productPriceTextView = binding.productPrice
+        val productPrice = "Precio: ${product.price}"
+        productPriceTextView.text = productPrice
     }
 
     override fun onDestroyView() {
