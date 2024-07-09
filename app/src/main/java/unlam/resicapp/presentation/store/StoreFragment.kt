@@ -22,6 +22,9 @@ class StoreFragment : Fragment() {
         // ToDo:: -10- *No permitir volver atrás* / Priority: Media
         // Description: Lanzar snackbar preguntando si quiere cerrar la sesión
 
+        // ToDo:: -10- *Considerar eliminar este fragment* / Priority: Alta
+        // Description: teniendo el bottom navigation bar este fragment ya no va a ser necesario
+
         binding.buttonToPurchase.setOnClickListener {
             val action =  R.id.action_storeFragment_to_availableProductsFragment
             findNavController().navigate(action)
