@@ -23,4 +23,10 @@ object UserRepository {
     fun getUserLogged(): User {
         return userLogged!!
     }
+
+    //en esta app no tiene mucho sentido esta funcion,
+    //pero en el caso que hubiera persistencia de datos, se actualizaria la base de datos.
+    fun setBalance(userId: Long, newBalance: Double){
+        userLogged?.money = newBalance
+    }
 }

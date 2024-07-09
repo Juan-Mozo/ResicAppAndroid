@@ -48,7 +48,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun navigateToStore() {
-        val action =  R.id.action_loginFragment_to_storeFragment
+        val action =  R.id.action_loginFragment_to_availableProductsFragment
         findNavController().navigate(action)
     }
 

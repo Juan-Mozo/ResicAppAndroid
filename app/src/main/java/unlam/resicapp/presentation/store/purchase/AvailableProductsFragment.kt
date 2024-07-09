@@ -41,17 +41,10 @@ class AvailableProductsFragment : Fragment() {
         return binding.root
 
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.userMoneyText.text = userManager.getUserLogged().money.toString()
-    }
-
     private fun navigateToProductDetailFragment(product: Product) {
         val action =
-            AvailableProductsFragmentDirections.actionAvailableProductsFragmentToPurchaseFragment(
-                product
-            )
+            AvailableProductsFragmentDirections.
+            actionAvailableProductsFragmentToPurchaseFragment(product)
         findNavController().navigate(action)
     }
 
