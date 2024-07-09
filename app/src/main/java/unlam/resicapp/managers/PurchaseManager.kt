@@ -25,7 +25,9 @@ class PurchaseManager {
             userId = userId,
             productId = product.id,
             amount = product.price + product.classification.calculateFee(product, Date.getDay(date)),
-            createdDate = date.toString()
+            createdDate = date.year.toString() + "/"
+                    + date.monthValue.toString() + "/"
+                    + date.dayOfMonth.toString()
         )
         PurchaseRepository.add(newPurchase)
 

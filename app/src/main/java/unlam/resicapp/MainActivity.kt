@@ -19,25 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//
-//        // Navigation
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        val navController = navHostFragment.navController
-//
-//
-//        // Bottom Navigation
-//        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-//        NavigationUI.setupWithNavController(bottomNavigationView, navController)
-//
-//        navController.addOnDestinationChangedListener{_, destination, _ ->
-//            when(destination.id){
-//                R.id.loginFragment, R.id.productDetailFragment ->
-//                    bottomNavigationView.visibility = View.GONE
-//
-//                else -> bottomNavigationView.visibility = View.VISIBLE
-//            }
-//
-//        }
+
         onItemOfBottomNavClicked()
         setupToolbar()
     }
