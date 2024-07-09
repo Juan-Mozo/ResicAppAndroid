@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.resicappandroid.databinding.FragmentPurchaseHistoryBinding
 import unlam.resicapp.managers.PurchaseManager
-import unlam.resicapp.presentation.util.HeaderAdapter
 
 class PurchaseHistoryFragment : Fragment() {
 
@@ -24,12 +23,11 @@ class PurchaseHistoryFragment : Fragment() {
     ): View {
         _binding = FragmentPurchaseHistoryBinding.inflate(inflater, container, false)
 
-        // Recycler View & Adapter
+        // Recycler View
         val recyclerView = binding.purchaseHistoryRV
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val recyclerViewAdapter = PurchaseHistoryAdapter()
-        val headerAdapter = HeaderAdapter("Historial de compras")
-        recyclerView.adapter = ConcatAdapter(headerAdapter, recyclerViewAdapter)
+        recyclerView.adapter = ConcatAdapter(recyclerViewAdapter)
 
         // Load list
         recyclerViewAdapter.submitList(purchaseManager.getAllPurchases())

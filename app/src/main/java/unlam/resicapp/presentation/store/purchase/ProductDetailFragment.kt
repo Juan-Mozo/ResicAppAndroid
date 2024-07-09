@@ -17,8 +17,6 @@ import unlam.resicapp.presentation.util.ImageTransformation
 import java.time.LocalDateTime
 
 class ProductDetailFragment : Fragment() {
-    // ToDo:: -6- *ProductDetailFragment* / Priority: Alta
-    // Description: Mostrar producto seleccionado y permitir confirmar compra
     private var _binding: FragmentProductDetailBinding? = null
     private val binding get() = _binding!!
     private val args: ProductDetailFragmentArgs by navArgs()
