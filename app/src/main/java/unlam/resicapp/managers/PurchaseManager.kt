@@ -2,16 +2,18 @@ package unlam.resicapp.managers
 
 import unlam.resicapp.data.Product
 import unlam.resicapp.data.Purchase
+import unlam.resicapp.data.User
 import unlam.resicapp.repositories.PurchaseRepository
 import unlam.resicapp.managers.util.Date
 import java.time.LocalDateTime
 
 class PurchaseManager {
-    // ToDo:: -7- *Traer compras por id del usuario* / Priority: Media
-    // Description:
-
     fun getAllPurchases(): List<Purchase> {
         return PurchaseRepository.getAllPurchases()
+    }
+
+    fun getPurchasesOfUser(user: User): List<Purchase> {
+        return getAllPurchases().filter{ it.userId == user.id }
     }
 
     // ToDo:: -8- *Revisar lógica* / Priority: Alta

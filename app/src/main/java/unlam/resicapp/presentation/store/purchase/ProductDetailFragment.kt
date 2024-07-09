@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentProductDetailBinding
-import com.google.android.material.snackbar.Snackbar
 import unlam.resicapp.data.Product
 import unlam.resicapp.data.User
 import unlam.resicapp.managers.PurchaseManager
@@ -40,6 +39,7 @@ class ProductDetailFragment : Fragment() {
         val user = userManager.getUserLogged()
 
         setupViews(product, user)
+
 
         binding.buyButton.setOnClickListener {
             purchaseManager.newPurchase(user.id, product, LocalDateTime.now())
