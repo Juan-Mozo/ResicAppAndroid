@@ -12,6 +12,7 @@ import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentProductDetailBinding
 import unlam.resicapp.data.Product
 import unlam.resicapp.data.User
+import unlam.resicapp.data.exeptions.InsufficientMoneyException
 import unlam.resicapp.managers.PurchaseManager
 import unlam.resicapp.managers.UserManager
 import unlam.resicapp.presentation.util.ImageTransformation
@@ -42,9 +43,14 @@ class ProductDetailFragment : Fragment() {
 
 
         binding.buyButton.setOnClickListener {
-            purchaseManager.newPurchase(user.id, product, LocalDateTime.now())
-            showToast(getString(R.string.message_succesfully_purchase))
-            findNavController().popBackStack() //retorna al usuario al fragment anterior
+            try {
+                purchaseManager.newPurchase(user, product, LocalDateTime.now())
+                showToast(getString(R.string.message_succesfully_purchase))
+                findNavController().popBackStack() //retorna al usuario al fragment anterior
+
+            } catch (e: InsufficientMoneyException) {
+                showToast(e.message!!)
+            }
         }
 
     }

@@ -10,6 +10,6 @@ data class User(
     val password: String,
     val name: String,
     val surname: String,
-    val money: Double,
+    var money: Double,
     val createdDate: String
 ):Parcelable
