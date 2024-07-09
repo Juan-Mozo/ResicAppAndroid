@@ -10,26 +10,18 @@
         android:name="unlam.resicapp.presentation.login.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_storeFragment"
-            app:destination="@id/storeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/storeFragment"
-        android:name="unlam.resicapp.presentation.store.StoreFragment"
-        android:label="StoreFragment" >
-        <action
-            android:id="@+id/action_storeFragment_to_purchaseHistoryFragment"
-            app:destination="@id/purchaseHistoryFragment" />
-        <action
-            android:id="@+id/action_storeFragment_to_availableProductsFragment"
+            android:id="@+id/action_loginFragment_to_availableProductsFragment"
             app:destination="@id/availableProductsFragment" />
-
     </fragment>
     <fragment
         android:id="@+id/purchaseHistoryFragment"
         android:name="unlam.resicapp.presentation.store.purchase_history.PurchaseHistoryFragment"
         android:label="fragment_purchase_history_list"
-        tools:layout="@layout/fragment_purchase_history" />
+        tools:layout="@layout/fragment_purchase_history" >
+        <action
+            android:id="@+id/action_purchaseHistoryFragment_to_availableProductsFragment"
+            app:destination="@id/availableProductsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/productDetailFragment"
         android:name="unlam.resicapp.presentation.store.purchase.ProductDetailFragment"

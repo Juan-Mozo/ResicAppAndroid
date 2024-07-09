@@ -19,4 +19,8 @@ class UserManager {
     fun getUserLogged(): User {
         return UserRepository.getUserLogged()
     }
+
+    fun updateCurrentBalance(user: User, paid: Double) {
+        UserRepository.setBalance(user.id, user.money - paid)
+    }
 }

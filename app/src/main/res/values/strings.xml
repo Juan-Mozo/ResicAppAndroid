@@ -16,6 +16,8 @@
     <string name="password_title">Contraseña</string>
     <string name="login_button">Ingresar</string>
     <string name="amount_title">Monto total:</string>
+    <string name="dinero_disponible_title">Dinero disponible: </string>
+    <string name="productos_disponibles_title">Productos disponibles</string>
 
     <string name="message_incorrect_login">Nombre de usuario o contraseña incorrectos.</string>
     <string name="message_empty_text">Por favor complete los campos vacíos</string>
@@ -24,5 +26,6 @@
     <string name="buy">Comprar</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt
         ut labore et dolore magna aliqua.</string>
+    <string name="toolbar_title">ResicApp</string>
 
 </resources>
