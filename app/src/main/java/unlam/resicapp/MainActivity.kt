@@ -38,9 +38,23 @@ class MainActivity : AppCompatActivity() {
 //            }
 //
 //        }
-
+        onItemOfBottomNavClicked()
         setupToolbar()
     }
+
+    private fun onItemOfBottomNavClicked() {
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when(it.itemId){
+                R.id.availableProductsFragment -> navigateToAvailableProductFragment()
+                R.id.purchaseHistoryFragment -> navigateToPurchaseHistoryFragment()
+            }
+            true
+        }
+    }
+
+    private fun navigateToPurchaseHistoryFragment() = navController.navigate(R.id.purchaseHistoryFragment)
+
+    private fun navigateToAvailableProductFragment() = navController.navigate(R.id.availableProductsFragment)
 
     private fun setupToolbar() {
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -64,16 +78,19 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.productDetailFragment ->{
-                    hideToolBar()
                     hideBottomNavigation()
                     changeToolbarTitle("Producto")
                 }
 
                 R.id.purchaseHistoryFragment->{
+                    showToolbar()
+                    showBottomNavigation()
                     changeToolbarTitle("Historial De Compra")
                 }
 
                 R.id.availableProductsFragment->{
+                    showToolbar()
+                    showBottomNavigation()
                     changeToolbarTitle("Productos Disponibles")
                 }
 
@@ -86,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun changeToolbarTitle(string: String) {
+    private fun changeToolbarTitle(title: String) {
         binding.toolbar.title = title
     }
 
