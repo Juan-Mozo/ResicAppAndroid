@@ -30,120 +30,205 @@
     <!-- Nombre del producto -->
     <TextView
         android:id="@+id/product_name"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:gravity="center"
         android:maxLines="2"
-        android:textColor="@android:color/holo_blue_dark"
-        app:layout_constraintTop_toBottomOf="@id/product_logo_card"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="@style/H1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_logo_card"
         tools:text="@string/lorem_ipsum" />
 
     <!-- Autor -->
     <TextView
-        android:id="@+id/product_author"
-        android:layout_width="300dp"
+        android:id="@+id/product_author_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Autor: "
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@id/product_name"
+        android:text="@string/author_title"
+        android:textAppearance="@style/B1_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/product_name" />
+    <TextView
+        android:id="@+id/product_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintTop_toTopOf="@+id/product_author_title"
+        app:layout_constraintBottom_toBottomOf="@+id/product_author_title"
+        app:layout_constraintStart_toEndOf="@+id/product_author_title"
+        tools:text="The Beatles" />
 
     <!-- Tipo de producto -->
     <TextView
-        android:id="@+id/product_type"
-        android:layout_width="300dp"
+        android:id="@+id/product_type_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:text="Tipo: "
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@id/product_author"
+        android:text="@string/type_title"
+        android:textAppearance="@style/B1_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/product_author_title" />
+    <TextView
+        android:id="@+id/product_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintBottom_toBottomOf="@+id/product_type_title"
+        app:layout_constraintStart_toEndOf="@+id/product_type_title"
+        app:layout_constraintTop_toTopOf="@+id/product_type_title"
+        tools:text="Album" />
 
     <!-- Clasificación del producto -->
     <TextView
-        android:id="@+id/product_classification"
-        android:layout_width="300dp"
+        android:id="@+id/product_classification_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Clasificación: "
-        android:textSize="20sp"
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@id/product_type"
+        android:text="@string/classification_title"
+        android:textAppearance="@style/B1_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/product_type_title" />
+    <TextView
+        android:id="@+id/product_classification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintBottom_toBottomOf="@+id/product_classification_title"
+        app:layout_constraintStart_toEndOf="@+id/product_classification_title"
+        app:layout_constraintTop_toTopOf="@+id/product_classification_title"
+        tools:text="Golden" />
 
     <!-- Fecha de lanzamiento -->
     <TextView
-        android:id="@+id/product_released_date"
-        android:layout_width="300dp"
+        android:id="@+id/product_released_date_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Fecha de lanzamiento: "
         android:maxLines="1"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/product_classification"
+        android:text="@string/released_date_title"
+        android:textAppearance="@style/B1_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/product_classification_title" />
+    <TextView
+        android:id="@+id/product_released_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintBottom_toBottomOf="@+id/product_released_date_title"
+        app:layout_constraintStart_toEndOf="@+id/product_released_date_title"
+        app:layout_constraintTop_toTopOf="@+id/product_released_date_title"
+        tools:text="18/09/1965" />
 
     <!-- Categoría -->
     <TextView
-        android:id="@+id/product_category"
-        android:layout_width="300dp"
+        android:id="@+id/product_category_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Categoría: "
-        android:textSize="20sp"
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@id/product_released_date"
+        android:text="@string/category_title"
+        android:textAppearance="@style/B1_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/product_released_date" />
+    <TextView
+        android:id="@+id/product_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintBottom_toBottomOf="@+id/product_category_title"
+        app:layout_constraintStart_toEndOf="@+id/product_category_title"
+        app:layout_constraintTop_toTopOf="@+id/product_category_title"
+        tools:text="Rock" />
 
     <!-- Estrellas -->
     <TextView
-        android:id="@+id/product_stars"
-        android:layout_width="300dp"
+        android:id="@+id/product_stars_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Estrellas: "
         android:maxLines="1"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/product_category"
+        android:text="@string/stars_title"
+        android:textAppearance="@style/B1_semi_bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/product_category" />
+
+    <TextView
+        android:id="@+id/product_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintBottom_toBottomOf="@+id/product_stars_title"
+        app:layout_constraintStart_toEndOf="@+id/product_stars_title"
+        app:layout_constraintTop_toTopOf="@+id/product_stars_title"
+        tools:text="4.7" />
+
+    <ImageView
+        android:id="@+id/star_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_star_24"
+        app:layout_constraintBottom_toBottomOf="@+id/product_stars"
+        app:layout_constraintStart_toEndOf="@+id/product_stars"
+        app:layout_constraintTop_toTopOf="@+id/product_stars" />
 
     <!-- Precio -->
+
+    <TextView
+        android:id="@+id/product_price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:maxLines="1"
+        android:text="@string/price_title"
+        android:textAppearance="@style/S1"
+        android:textColor="@color/green_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/product_price"
+        app:layout_constraintEnd_toStartOf="@+id/product_price"
+        app:layout_constraintTop_toTopOf="@+id/product_price" />
+
     <TextView
         android:id="@+id/product_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:text="Precio: "
-        android:maxLines="1"
-        android:textColor="@android:color/holo_green_light"
-        app:layout_constraintBottom_toTopOf="@id/buy_button"
+        android:layout_marginBottom="1dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintBottom_toTopOf="@+id/buy_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/star_icon"
+        tools:text="450.0" />
 
     <!-- Botón Comprar -->
     <Button
         android:id="@+id/buy_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comprar"
+        android:layout_marginBottom="16dp"
+        android:text="@string/buy"
+        android:textAppearance="@style/Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

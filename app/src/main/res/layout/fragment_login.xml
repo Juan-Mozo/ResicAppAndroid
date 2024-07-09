@@ -9,13 +9,12 @@
         android:id="@+id/userTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:text="@string/login_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAppearance="@style/H1"
+        app:layout_constraintBottom_toTopOf="@+id/userEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/userEditText"
@@ -27,11 +26,11 @@
         android:hint="@string/user_title"
         android:inputType="text"
         android:paddingHorizontal="8dp"
+        android:textAppearance="@style/S1"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userTitleTextView"
-        app:layout_constraintVertical_bias="0.32999998" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -44,6 +43,7 @@
         android:hint="@string/password_title"
         android:inputType="textPassword"
         android:paddingHorizontal="8dp"
+        android:textAppearance="@style/S1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userEditText" />
@@ -53,9 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:paddingVertical="8dp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp"
         android:text="@string/login_button"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

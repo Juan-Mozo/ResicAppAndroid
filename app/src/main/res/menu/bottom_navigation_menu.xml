@@ -3,12 +3,18 @@
 
     <item
         android:id="@+id/availableProductsFragment"
-        android:icon="@drawable/baseline_add_shopping_cart_24"
+        android:icon="@drawable/ic_shopping_cart"
         android:title="Comprar" />
 
     <item
         android:id="@+id/purchaseHistoryFragment"
-        android:icon="@drawable/baseline_history_24"
+        android:icon="@drawable/ic_time_past"
         android:title="Historial" />
+
+    <item
+        android:id="@+id/userFragment"
+        android:icon="@drawable/ic_user"
+        android:title="Cuenta"
+        />
 
 </menu>

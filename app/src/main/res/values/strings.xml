@@ -15,13 +15,23 @@
     <string name="user_title">Usuario</string>
     <string name="password_title">Contraseña</string>
     <string name="login_button">Ingresar</string>
-    <string name="amount_title">Monto total:</string>
+    <string name="amount_title">Monto:</string>
     <string name="dinero_disponible_title">Dinero disponible: </string>
     <string name="productos_disponibles_title">Productos disponibles</string>
 
     <string name="message_incorrect_login">Nombre de usuario o contraseña incorrectos.</string>
     <string name="message_empty_text">Por favor complete los campos vacíos</string>
     <string name="message_succesfully_purchase">¡Gracias por su compra!</string>
+
+    <string name="author_title">Autor:</string>
+    <string name="type_title">Tipo:</string>
+    <string name="classification_title">Clasificación:</string>
+    <string name="released_date_title">Lanzamiento:</string>
+    <string name="category_title">Categoría:</string>
+    <string name="stars_title">Calificación:</string>
+    <string name="price_title">Precio final:</string>
+
+
     <string name="product_logo">product_logo</string>
     <string name="buy">Comprar</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt

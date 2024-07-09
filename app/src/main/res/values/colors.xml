@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- Palette 1 -->
+    <color name="peach">#DCA47C</color>
+    <color name="peach_variant">#F3C8A9</color>
+    <color name="pink">#FFD3B6</color>
+    <color name="white">#FCF8F3</color>
+    <color name="green_blue">#698474</color>
+    <color name="green_blue_light">#92B6A0</color>
+    <color name="blue">#607274</color>
+    <color name="blue_light">#91AAAD</color>
+
 </resources>

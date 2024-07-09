@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TITLE -->
+    <style name="H1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+    <!-- SUBTITLE -->
+    <style name="S1" parent="H1">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+    </style>
+    <!-- BODY -->
+    <style name="B1" parent="H1">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+    <style name="B1_semi_bold" parent="H1">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+    <style name="B2" parent="H1">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/montserrat_regular</item>
+    </style>
+    <style name="B2_semi_bold" parent="H1">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+    <!-- BUTTON -->
+    <style name="Button" parent="H1">
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+</resources>
