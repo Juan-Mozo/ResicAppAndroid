@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.loginFragment -> {
-                    showToolbar()
                     hideBottomNavigation()
                     changeToolbarTitle(getString(R.string.toolbar_title))
                 }
@@ -65,19 +64,16 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.purchaseHistoryFragment->{
-                    showToolbar()
                     showBottomNavigation()
                     changeToolbarTitle("Historial De Compra")
                 }
 
                 R.id.availableProductsFragment->{
-                    showToolbar()
                     showBottomNavigation()
                     changeToolbarTitle("Productos Disponibles")
                 }
 
                 else -> {
-                    showToolbar()
                     showBottomNavigation()
                     changeToolbarTitle(getString(R.string.toolbar_title))
                 }
@@ -87,14 +83,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeToolbarTitle(title: String) {
         binding.toolbar.title = title
-    }
-
-    private fun showToolbar() {
-        binding.toolbar.visibility = View.VISIBLE
-    }
-
-    private fun hideToolBar() {
-        binding.toolbar.visibility = View.GONE
     }
 
     private fun showBottomNavigation() {
@@ -112,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         val TOP_LEVEL_DESTINATIONS = setOf(
-            R.id.storeFragment,
+            R.id.availableProductsFragment,
             R.id.loginFragment
         )
     }

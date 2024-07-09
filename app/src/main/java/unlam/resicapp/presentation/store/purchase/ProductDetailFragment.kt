@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -42,12 +43,14 @@ class ProductDetailFragment : Fragment() {
 
         binding.buyButton.setOnClickListener {
             purchaseManager.newPurchase(user.id, product, LocalDateTime.now())
-            Snackbar.make(
-                view, R.string.message_succesfully_purchase, Snackbar.LENGTH_SHORT
-            ).show()
+            showToast(getString(R.string.message_succesfully_purchase))
             findNavController().popBackStack() //retorna al usuario al fragment anterior
         }
 
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     private fun setupViews(product: Product, user: User) {
