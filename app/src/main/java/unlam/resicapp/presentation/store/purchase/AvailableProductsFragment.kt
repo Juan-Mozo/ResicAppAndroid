@@ -12,7 +12,6 @@ import com.example.resicappandroid.databinding.FragmentAvailableProductsBinding
 import unlam.resicapp.data.Product
 import unlam.resicapp.managers.ProductManager
 import unlam.resicapp.managers.UserManager
-import unlam.resicapp.presentation.util.HeaderAdapter
 
 class AvailableProductsFragment : Fragment() {
 
@@ -34,9 +33,8 @@ class AvailableProductsFragment : Fragment() {
         val recyclerViewAdapter = AvailableProductsAdapter { product ->
             navigateToProductDetailFragment(product)
         }
-        val headerAdapter = HeaderAdapter("Productos disponibles")
-        recyclerView.adapter = ConcatAdapter(headerAdapter, recyclerViewAdapter)
 
+        recyclerView.adapter = recyclerViewAdapter
         // Load list
         recyclerViewAdapter.submitList(productManager.getListOfAvailableProducts())
 
