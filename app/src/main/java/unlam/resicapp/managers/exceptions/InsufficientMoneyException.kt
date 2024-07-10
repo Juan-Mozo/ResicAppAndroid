@@ -1,3 +1,3 @@
-package unlam.resicapp.data.exeptions
+package unlam.resicapp.managers.exceptions
 
 class InsufficientMoneyException(message: String) : Exception(message)

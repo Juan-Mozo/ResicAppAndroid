@@ -12,7 +12,7 @@ import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentProductDetailBinding
 import unlam.resicapp.data.Product
 import unlam.resicapp.data.User
-import unlam.resicapp.data.exeptions.InsufficientMoneyException
+import unlam.resicapp.managers.exceptions.InsufficientMoneyException
 import unlam.resicapp.managers.PurchaseManager
 import unlam.resicapp.managers.UserManager
 import unlam.resicapp.presentation.util.ImageTransformation
