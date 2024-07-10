@@ -17,7 +17,11 @@ class PurchaseManager {
     fun getPurchasesOfUser(user: User): List<Purchase> {
         return getAllPurchases().filter{ it.userId == user.id }
     }
-    fun newPurchase(user: User, product: Product, date: LocalDateTime): Purchase {
+
+    fun getFinalPrice(product: Product, date: LocalDateTime): Double {
+        return product.price + product.classification.calculateFee(product, Date.getDay(date))
+    }
+    fun newPurchase(user: User, product: Product, date: LocalDateTime, finalPrice: Double): Purchase {
         if(user.money <= product.price) {
             throw InsufficientMoneyException("Saldo insuficiente para realizar compra")
         }
@@ -25,13 +29,13 @@ class PurchaseManager {
             id = PurchaseRepository.getAllPurchases().last().id + 1,
             userId = user.id,
             productId = product.id,
-            amount = product.price + product.classification.calculateFee(product, Date.getDay(date)),
+            amount = finalPrice,
             createdDate = date.year.toString() + "/"
                     + date.monthValue.toString() + "/"
                     + date.dayOfMonth.toString()
         )
         PurchaseRepository.add(newPurchase)
-        userManager.updateCurrentBalance(user, product.price)
+        userManager.updateCurrentBalance(user, finalPrice)
 
         return newPurchase
     }

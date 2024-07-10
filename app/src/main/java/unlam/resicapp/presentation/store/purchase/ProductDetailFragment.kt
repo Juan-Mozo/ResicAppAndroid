@@ -38,13 +38,17 @@ class ProductDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val product = args.product
         val user = userManager.getUserLogged()
+        val date = LocalDateTime.now()
 
         setupViews(product, user)
 
+        val productPriceTextView = binding.productPrice
+        val productFinalPrice = purchaseManager.getFinalPrice(product, date)
+        productPriceTextView.text = productFinalPrice.toString()
 
         binding.buyButton.setOnClickListener {
             try {
-                purchaseManager.newPurchase(user, product, LocalDateTime.now())
+                purchaseManager.newPurchase(user, product, date, productFinalPrice)
                 showToast(getString(R.string.message_succesfully_purchase))
                 findNavController().popBackStack() //retorna al usuario al fragment anterior
 
@@ -61,7 +65,7 @@ class ProductDetailFragment : Fragment() {
 
     private fun setupViews(product: Product, user: User) {
         // Titulo Toolbar
-        val moneyTextToolbar = binding.userMoneyText
+        val moneyTextToolbar = binding.userMoney
         moneyTextToolbar.text = user.money.toString()
 
         // Imagen del producto
@@ -75,38 +79,27 @@ class ProductDetailFragment : Fragment() {
 
         // Autor
         val productAuthorTextView = binding.productAuthor
-        val productAuthor = "Autor: ${product.author}"
-        productAuthorTextView.text = productAuthor
+        productAuthorTextView.text = product.author
 
         // Tipo de producto
         val productTypeTextView = binding.productType
-        val productType = "Tipo: ${product.type}"
-        productTypeTextView.text = productType
+        productTypeTextView.text = product.type.toString()
 
         // Clasificación del producto
         val productClassificationTextView = binding.productClassification
-        val productClassification = "Clasificación: ${product.classification}"
-        productClassificationTextView.text = productClassification
+        productClassificationTextView.text = product.classification.toString()
 
         // Fecha de lanzamiento
         val productReleasedDateTextView = binding.productReleasedDate
-        val productReleasedDate = "Fecha de lanzamiento: ${product.releasedDate}"
-        productReleasedDateTextView.text = productReleasedDate
+        productReleasedDateTextView.text = product.releasedDate.toString()
 
         // Categoría
         val productCategoryTextView = binding.productCategory
-        val productCategory = "Categoría: ${product.category}"
-        productCategoryTextView.text = productCategory
+        productCategoryTextView.text = product.category
 
         // Estrellas
         val productStarsTextView = binding.productStars
-        val productStars = "Estrellas: ${product.stars}"
-        productStarsTextView.text = productStars
-
-        // Precio
-        val productPriceTextView = binding.productPrice
-        val productPrice = "Precio: ${product.price}"
-        productPriceTextView.text = productPrice
+        productStarsTextView.text = product.stars.toString()
     }
 
     override fun onDestroyView() {
