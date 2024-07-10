@@ -69,7 +69,10 @@ class MainActivity : AppCompatActivity() {
                     showBottomNavigation()
                     changeToolbarTitle("Productos Disponibles")
                 }
-
+                R.id.userFragment -> {
+                    showBottomNavigation()
+                    changeToolbarTitle("Cuenta")
+                }
                 else -> {
                     showBottomNavigation()
                     changeToolbarTitle(getString(R.string.toolbar_title))

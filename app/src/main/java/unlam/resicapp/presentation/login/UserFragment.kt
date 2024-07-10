@@ -5,12 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.resicappandroid.R
 import com.example.resicappandroid.databinding.FragmentUserBinding
-import com.google.android.material.snackbar.Snackbar
 import unlam.resicapp.managers.UserManager
-import unlam.resicapp.managers.exceptions.UserNotFoundException
 
 
 class UserFragment : Fragment() {
@@ -36,11 +32,6 @@ class UserFragment : Fragment() {
 
         return binding.root
 
-    }
-
-    private fun navigateToStore() {
-        val action =  R.id.action_loginFragment_to_availableProductsFragment
-        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

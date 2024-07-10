@@ -11,6 +11,7 @@ import com.example.resicappandroid.databinding.FragmentPurchaseHistoryBinding
 import unlam.resicapp.data.User
 import unlam.resicapp.managers.PurchaseManager
 import unlam.resicapp.managers.UserManager
+import unlam.resicapp.presentation.util.HeaderAdapter
 
 class PurchaseHistoryFragment : Fragment() {
 
@@ -30,7 +31,7 @@ class PurchaseHistoryFragment : Fragment() {
         val recyclerView = binding.purchaseHistoryRV
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val recyclerViewAdapter = PurchaseHistoryAdapter()
-        recyclerView.adapter = ConcatAdapter(recyclerViewAdapter)
+        recyclerView.adapter = ConcatAdapter(recyclerViewAdapter, HeaderAdapter(null))
 
         // Load list
         recyclerViewAdapter.submitList(purchaseManager.getPurchasesOfUser(user))
