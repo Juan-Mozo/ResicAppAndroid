@@ -4,231 +4,274 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context="unlam.resicapp.presentation.store.purchase.ProductDetailFragment">
 
-    <!-- Logo del producto con CardView para sombra -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/product_logo_card"
-        android:layout_width="300dp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/product_detail_actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_blue_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/user_money_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/user_money_title"
+            android:textAppearance="@style/B1_semi_bold"/>
+
+        <TextView
+            android:id="@+id/user_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="@style/B1"
+            android:paddingHorizontal="8dp"
+            tools:text="50000" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/product_detail_actionBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/product_logo"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/product_logo"
-            android:scaleType="centerCrop" />
-    </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content">
 
-    <!-- Nombre del producto -->
-    <TextView
-        android:id="@+id/product_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:gravity="center"
-        android:maxLines="2"
-        android:textAppearance="@style/H1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_logo_card"
-        tools:text="@string/lorem_ipsum" />
+            <!-- Logo del producto con CardView para sombra -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/product_logo_card"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Autor -->
-    <TextView
-        android:id="@+id/product_author_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:text="@string/author_title"
-        android:textAppearance="@style/B1_semi_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_name" />
-    <TextView
-        android:id="@+id/product_author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintTop_toTopOf="@+id/product_author_title"
-        app:layout_constraintBottom_toBottomOf="@+id/product_author_title"
-        app:layout_constraintStart_toEndOf="@+id/product_author_title"
-        tools:text="The Beatles" />
+                <ImageView
+                    android:id="@+id/product_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/product_logo"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
 
-    <!-- Tipo de producto -->
-    <TextView
-        android:id="@+id/product_type_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="@string/type_title"
-        android:textAppearance="@style/B1_semi_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_author_title" />
-    <TextView
-        android:id="@+id/product_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintBottom_toBottomOf="@+id/product_type_title"
-        app:layout_constraintStart_toEndOf="@+id/product_type_title"
-        app:layout_constraintTop_toTopOf="@+id/product_type_title"
-        tools:text="Album" />
+            <!-- Nombre del producto -->
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:maxLines="2"
+                android:textAppearance="@style/H1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_logo_card"
+                tools:text="@string/lorem_ipsum" />
 
-    <!-- Clasificación del producto -->
-    <TextView
-        android:id="@+id/product_classification_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="@string/classification_title"
-        android:textAppearance="@style/B1_semi_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_type_title" />
-    <TextView
-        android:id="@+id/product_classification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintBottom_toBottomOf="@+id/product_classification_title"
-        app:layout_constraintStart_toEndOf="@+id/product_classification_title"
-        app:layout_constraintTop_toTopOf="@+id/product_classification_title"
-        tools:text="Golden" />
+            <!-- Autor -->
+            <TextView
+                android:id="@+id/product_author_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:maxLines="1"
+                android:text="@string/author_title"
+                android:textAppearance="@style/B1_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_name" />
+            <TextView
+                android:id="@+id/product_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintTop_toTopOf="@+id/product_author_title"
+                app:layout_constraintBottom_toBottomOf="@+id/product_author_title"
+                app:layout_constraintStart_toEndOf="@+id/product_author_title"
+                tools:text="The Beatles" />
 
-    <!-- Fecha de lanzamiento -->
-    <TextView
-        android:id="@+id/product_released_date_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="@string/released_date_title"
-        android:textAppearance="@style/B1_semi_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_classification_title" />
-    <TextView
-        android:id="@+id/product_released_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintBottom_toBottomOf="@+id/product_released_date_title"
-        app:layout_constraintStart_toEndOf="@+id/product_released_date_title"
-        app:layout_constraintTop_toTopOf="@+id/product_released_date_title"
-        tools:text="18/09/1965" />
+            <!-- Tipo de producto -->
+            <TextView
+                android:id="@+id/product_type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:text="@string/type_title"
+                android:textAppearance="@style/B1_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_author_title" />
+            <TextView
+                android:id="@+id/product_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintBottom_toBottomOf="@+id/product_type_title"
+                app:layout_constraintStart_toEndOf="@+id/product_type_title"
+                app:layout_constraintTop_toTopOf="@+id/product_type_title"
+                tools:text="Album" />
 
-    <!-- Categoría -->
-    <TextView
-        android:id="@+id/product_category_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="@string/category_title"
-        android:textAppearance="@style/B1_semi_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_released_date" />
-    <TextView
-        android:id="@+id/product_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintBottom_toBottomOf="@+id/product_category_title"
-        app:layout_constraintStart_toEndOf="@+id/product_category_title"
-        app:layout_constraintTop_toTopOf="@+id/product_category_title"
-        tools:text="Rock" />
+            <!-- Clasificación del producto -->
+            <TextView
+                android:id="@+id/product_classification_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:text="@string/classification_title"
+                android:textAppearance="@style/B1_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_type_title" />
+            <TextView
+                android:id="@+id/product_classification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintBottom_toBottomOf="@+id/product_classification_title"
+                app:layout_constraintStart_toEndOf="@+id/product_classification_title"
+                app:layout_constraintTop_toTopOf="@+id/product_classification_title"
+                tools:text="Golden" />
 
-    <!-- Estrellas -->
-    <TextView
-        android:id="@+id/product_stars_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
-        android:text="@string/stars_title"
-        android:textAppearance="@style/B1_semi_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/product_category" />
+            <!-- Fecha de lanzamiento -->
+            <TextView
+                android:id="@+id/product_released_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:text="@string/released_date_title"
+                android:textAppearance="@style/B1_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_classification_title" />
+            <TextView
+                android:id="@+id/product_released_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintBottom_toBottomOf="@+id/product_released_date_title"
+                app:layout_constraintStart_toEndOf="@+id/product_released_date_title"
+                app:layout_constraintTop_toTopOf="@+id/product_released_date_title"
+                tools:text="18/09/1965" />
 
-    <TextView
-        android:id="@+id/product_stars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintBottom_toBottomOf="@+id/product_stars_title"
-        app:layout_constraintStart_toEndOf="@+id/product_stars_title"
-        app:layout_constraintTop_toTopOf="@+id/product_stars_title"
-        tools:text="4.7" />
+            <!-- Categoría -->
+            <TextView
+                android:id="@+id/product_category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:text="@string/category_title"
+                android:textAppearance="@style/B1_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_released_date" />
+            <TextView
+                android:id="@+id/product_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintBottom_toBottomOf="@+id/product_category_title"
+                app:layout_constraintStart_toEndOf="@+id/product_category_title"
+                app:layout_constraintTop_toTopOf="@+id/product_category_title"
+                tools:text="Rock" />
 
-    <ImageView
-        android:id="@+id/star_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:src="@drawable/ic_star_24"
-        app:layout_constraintBottom_toBottomOf="@+id/product_stars"
-        app:layout_constraintStart_toEndOf="@+id/product_stars"
-        app:layout_constraintTop_toTopOf="@+id/product_stars" />
+            <!-- Estrellas -->
+            <TextView
+                android:id="@+id/product_stars_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:maxLines="1"
+                android:text="@string/stars_title"
+                android:textAppearance="@style/B1_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/product_category" />
 
-    <!-- Precio -->
+            <TextView
+                android:id="@+id/product_stars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintBottom_toBottomOf="@+id/product_stars_title"
+                app:layout_constraintStart_toEndOf="@+id/product_stars_title"
+                app:layout_constraintTop_toTopOf="@+id/product_stars_title"
+                tools:text="4.7" />
 
-    <TextView
-        android:id="@+id/product_price_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:maxLines="1"
-        android:text="@string/price_title"
-        android:textAppearance="@style/S1"
-        android:textColor="@color/green_blue"
-        app:layout_constraintBottom_toBottomOf="@+id/product_price"
-        app:layout_constraintEnd_toStartOf="@+id/product_price"
-        app:layout_constraintTop_toTopOf="@+id/product_price" />
+            <ImageView
+                android:id="@+id/star_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/ic_star_24"
+                app:layout_constraintBottom_toBottomOf="@+id/product_stars"
+                app:layout_constraintStart_toEndOf="@+id/product_stars"
+                app:layout_constraintTop_toTopOf="@+id/product_stars" />
 
-    <TextView
-        android:id="@+id/product_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:textAppearance="@style/B1"
-        app:layout_constraintBottom_toTopOf="@+id/buy_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/star_icon"
-        tools:text="450.0" />
+            <!-- Precio -->
 
-    <!-- Botón Comprar -->
-    <Button
-        android:id="@+id/buy_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/buy"
-        android:textAppearance="@style/Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/product_price_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:maxLines="1"
+                android:text="@string/price_title"
+                android:textAppearance="@style/S1"
+                android:textColor="@color/green_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/product_price"
+                app:layout_constraintEnd_toStartOf="@+id/product_price"
+                app:layout_constraintTop_toTopOf="@+id/product_price" />
+
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAppearance="@style/B1"
+                app:layout_constraintBottom_toTopOf="@+id/buy_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star_icon"
+                tools:text="450.0" />
+
+            <!-- Botón Comprar -->
+            <Button
+                android:id="@+id/buy_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/buy"
+                android:textAppearance="@style/Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

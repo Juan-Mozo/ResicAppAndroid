@@ -16,7 +16,7 @@
     <string name="password_title">Contraseña</string>
     <string name="login_button">Ingresar</string>
     <string name="amount_title">Monto:</string>
-    <string name="dinero_disponible_title">Dinero disponible: </string>
+    <string name="user_money_title">Dinero disponible:</string>
     <string name="productos_disponibles_title">Productos disponibles</string>
 
     <string name="message_incorrect_login">Nombre de usuario o contraseña incorrectos.</string>
