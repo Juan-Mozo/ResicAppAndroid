@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="unlam.resicapp.presentation.login.UserFragment">
+
+    <TextView
+        android:id="@+id/nickname_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/user_title"
+        android:textAppearance="@style/S1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/H1"
+        android:textSize="32sp"
+        android:textColor="@color/blue_dark"
+        app:layout_constraintEnd_toEndOf="@id/nickname_title"
+        app:layout_constraintStart_toStartOf="@id/nickname_title"
+        app:layout_constraintTop_toBottomOf="@id/nickname_title"
+        tools:text="Leo" />
+
+    <TextView
+        android:id="@+id/user_name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_title"
+        android:textAppearance="@style/B1_semi_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nickname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nickname"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintEnd_toEndOf="@+id/user_name_title"
+        app:layout_constraintStart_toStartOf="@+id/user_name_title"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_title"
+        tools:text="Leonel" />
+
+    <TextView
+        android:id="@+id/user_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/B1"
+        app:layout_constraintEnd_toEndOf="@+id/user_name"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        tools:text="Messi" />
+
+    <TextView
+        android:id="@+id/user_created_date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/created_date_title"
+        android:textAppearance="@style/B1_semi_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nickname"
+        app:layout_constraintTop_toBottomOf="@+id/nickname"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/user_created_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/B1"
+        tools:text="25/01/2024"
+        app:layout_constraintEnd_toEndOf="@+id/user_created_date_title"
+        app:layout_constraintStart_toStartOf="@+id/user_created_date_title"
+        app:layout_constraintTop_toBottomOf="@+id/user_created_date_title" />
+
+    <TextView
+        android:id="@+id/user_screen_money_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_money_title"
+        android:textAppearance="@style/B1_semi_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_surname" />
+
+    <TextView
+        android:id="@+id/user_screen_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/H1"
+        android:textColor="@color/blue_dark"
+        app:layout_constraintEnd_toEndOf="@+id/user_screen_money_title"
+        app:layout_constraintStart_toStartOf="@+id/user_screen_money_title"
+        app:layout_constraintTop_toBottomOf="@+id/user_screen_money_title"
+        tools:text="50000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

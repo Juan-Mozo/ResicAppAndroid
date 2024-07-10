@@ -46,4 +46,9 @@
             android:name="product"
             app:argType="unlam.resicapp.data.Product" />
     </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="unlam.resicapp.presentation.login.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
 </navigation>

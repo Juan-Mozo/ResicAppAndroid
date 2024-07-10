@@ -27,16 +27,13 @@ class MainActivity : AppCompatActivity() {
     private fun onItemOfBottomNavClicked() {
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.availableProductsFragment -> navigateToAvailableProductFragment()
-                R.id.purchaseHistoryFragment -> navigateToPurchaseHistoryFragment()
+                R.id.availableProductsFragment -> navController.navigate(R.id.availableProductsFragment)
+                R.id.purchaseHistoryFragment -> navController.navigate(R.id.purchaseHistoryFragment)
+                R.id.userFragment -> navController.navigate(R.id.userFragment)
             }
             true
         }
     }
-
-    private fun navigateToPurchaseHistoryFragment() = navController.navigate(R.id.purchaseHistoryFragment)
-
-    private fun navigateToAvailableProductFragment() = navController.navigate(R.id.availableProductsFragment)
 
     private fun setupToolbar() {
         navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -101,7 +98,9 @@ class MainActivity : AppCompatActivity() {
     companion object {
         val TOP_LEVEL_DESTINATIONS = setOf(
             R.id.availableProductsFragment,
-            R.id.loginFragment
+            R.id.loginFragment,
+            R.id.purchaseHistoryFragment,
+            R.id.userFragment
         )
     }
 
